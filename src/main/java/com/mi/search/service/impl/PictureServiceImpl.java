@@ -23,7 +23,7 @@ import java.util.List;
  * @version 1.0
  * @project backend-administration-template
  * @description
- * @ClassName PictureServiceImpl
+ * @ClassName PictureDataSource
  */
 @Service
 @Slf4j
