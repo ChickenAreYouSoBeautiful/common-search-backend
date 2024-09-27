@@ -7,10 +7,22 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 /**
  * 帖子 ES 操作
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
+ * @author mi11
  */
 public interface PostEsDao extends ElasticsearchRepository<PostEsDTO, Long> {
 
+    /**
+     * 根据用户名查询
+     * @param userId
+     * @return
+     */
     List<PostEsDTO> findByUserId(Long userId);
+
+    /**
+     * 根据id和用户名查询
+     * @param id
+     * @param userId
+     * @return
+     */
+    List<PostEsDTO> findByIdAndUserId(Long id,Long userId);
 }

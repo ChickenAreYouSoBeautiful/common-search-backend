@@ -1,12 +1,10 @@
 package com.mi.search.datasource;
 
-import cn.hutool.http.HttpRequest;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mi.search.model.dto.user.UserQueryRequest;
 import com.mi.search.model.vo.UserVO;
 import com.mi.search.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
 
 /**
  * 帖子 ES 操作测试
@@ -29,6 +30,8 @@ public class PostEsDaoTest {
 
     @Resource
     private PostService postService;
+
+
 
     @Test
     void test() {
@@ -54,8 +57,6 @@ public class PostEsDaoTest {
         postEsDTO.setTitle("test");
         postEsDTO.setContent("test");
         postEsDTO.setTags(Arrays.asList("java", "python"));
-        postEsDTO.setThumbNum(1);
-        postEsDTO.setFavourNum(1);
         postEsDTO.setUserId(1L);
         postEsDTO.setCreateTime(new Date());
         postEsDTO.setUpdateTime(new Date());

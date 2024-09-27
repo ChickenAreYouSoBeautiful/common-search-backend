@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.mi.search.mapper.PostFavourMapper;
 import com.mi.search.mapper.PostThumbMapper;
 import com.mi.search.model.dto.post.PostQueryRequest;
+import com.mi.search.model.entity.Post;
 import com.mi.search.model.vo.PostVO;
 import com.mi.search.service.PostService;
 import com.mi.search.service.UserService;
@@ -36,7 +37,7 @@ public class PostDataSource implements DataSource<PostVO> {
 
     @Override
     public Page<PostVO> doSearch(String searchText, long pageNumber, long pageSize) {
-        return null;
+       return null;
     }
 
     @Override
@@ -45,8 +46,8 @@ public class PostDataSource implements DataSource<PostVO> {
         postQueryRequest.setSearchText(searchText);
         postQueryRequest.setCurrent(pageNumber);
         postQueryRequest.setPageSize(pageSize);
-
-        return  postService.listPostVOByPage(postQueryRequest,request);
+        Page<Post> postPage = postService.searchFromEs(postQueryRequest);
+        return  postService.getPostVOPage(postPage,request);
     }
 }
 
